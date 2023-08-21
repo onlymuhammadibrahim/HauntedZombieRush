@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
+                transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y + Time.deltaTime, -6.0f, 12.0f), transform.position.z);
                 GameManager.instance.PlayerStartedGame();
                 anim.Play("Jump");
                 audioSource.PlayOneShot(sfxJump);
